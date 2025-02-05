@@ -22,13 +22,13 @@ jobs:
           distribution: 'temurin'
           java-version: '21'
 
-      # Désactivation de l'étape "Build and test"
       - name: Build and test
         working-directory: .
         run: |
           chmod +x ./gradlew
           export SHELL=/bin/bash
           ./gradlew build
+          
       - name: Docker images
         working-directory: .
         run: |
